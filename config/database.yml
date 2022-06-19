@@ -20,7 +20,7 @@ default: &default
   # For details on connection pooling, see Rails configuration guide
   # https://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  username: ayn
+  username: <% ENV['NICE_TRY_DATABASE_USER'] %>
   password: <% ENV['NICE_TRY_DATABASE_PASSWORD'] %>
 
 development:
@@ -85,4 +85,4 @@ production:
   <<: *default
   database: nice_try_production
   username: nice_try
-  password: <%= ENV["NICE_TRY_DATABASE_PASSWORD="] %>
+  password: <%= ENV["NICE_TRY_DATABASE_PASSWORD"] %>
