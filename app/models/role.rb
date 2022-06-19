@@ -1,5 +1,3 @@
 class Role < ApplicationRecord
-  self.primary_key = 'role_id'
-
-  validates :title, presence: true
+  validates :code, presence: true
 end

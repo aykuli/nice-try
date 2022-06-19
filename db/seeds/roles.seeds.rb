@@ -9,5 +9,5 @@ roles = [
 
 roles.map do |role_prototype|
   role = Role.find_or_initialize_by(code: role_prototype[:code])
-  role.update!(title: role_prototype[:title])
+  role.update!(title: role_prototype[:title], is_archived: false)
 end
