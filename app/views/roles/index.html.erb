@@ -1,0 +1,22 @@
+<p>
+length <% @roles.length %>
+</p>
+
+<ul>
+  <% @roles.each do |role| %>
+    <li>
+      <span>
+        <% role.title %>
+      </span>
+      <span>
+        <% if role.is_archived %>
+          active
+        <% else %>
+          archived
+        <% end %>
+      </span>
+    </li>
+    
+  <% end %>
+
+</ul>
