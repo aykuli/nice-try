@@ -1,0 +1,14 @@
+version: "3.8"
+
+services:
+  db:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_USER: "${NICE_TRY_DATABASE_USER}"
+      POSTGRES_PASSWORD: "${NICE_TRY_DATABASE_PASSWORD}"
+      POSTGRES_DB: nice_try_development
+    volumes:
+      - ./volumes/postgres/data:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
